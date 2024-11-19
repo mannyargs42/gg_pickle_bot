@@ -20,5 +20,4 @@ book a court reservation.
     Click "Check to agree to above disclosure" box.
     Click "Save" to finish booking.
 
-
 """

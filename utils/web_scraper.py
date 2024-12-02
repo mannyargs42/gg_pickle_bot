@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium import By
+from selenium.webdriver.common.by import By
 
 """
 Use Selenium to automate browser interactions.
@@ -16,7 +16,7 @@ book a court reservation.
 *choose_date_time: Find today's date and click to open calendar.
     Locate date (8 days from today) and click.
     Locate desired time option and click.
-*finish booking: Change duration to "1 hour & 30 minutes" from drop-down.
+*finish_booking: Change duration to "1 hour & 30 minutes" from drop-down.
     Click "Check to agree to above disclosure" box.
     Click "Save" to finish booking.
 
@@ -44,25 +44,39 @@ class WebScraper:
         Locate login button.
         Enter email and password into input fields.
         Click the login button.
-        Locate and click "Pickleball and mini tennis reservations" from
+        --
+        Navigating the new page requires hovering over elements to expose
+        the ones we need to click into. Selenium's execute_script method
+        lets us execute JS code to interact with dynamic elements, as in
+        this in this order:
+        Locate the "Reservations" hover element.
+        Locate the "Pickleball and mini tennis reservations" from the
         "Reservations" drop-down menu.
+        Use execute_script to hover and then click into pickleball reservations.
         """
-        login_button = self.driver.find_element(By.LINK_TEXT, 'LOG IN')
+        login_button = self.driver.find_element(By.LINK_TEXT, "LOG IN")
         login_button.click()
-        enter_email = self.driver.find_element(By.ID, 'UserNameOrEmail')
-        enter_password = self.driver.find_element(By.ID, 'Password')
-        login_button = self.driver.find_element(By.LINK_TEXT, 'Login')
+        enter_email = self.driver.find_element(By.ID, "UserNameOrEmail")
+        enter_password = self.driver.find_element(By.ID, "Password")
+        login_button = self.driver.find_element(By.XPATH, "//button[text()='Login']")
         enter_email.send_keys(email)
         enter_password.send_keys(password)
         login_button.click()
-        pickle_res_button = self.driver.find_element(By.LINK_TEXT, 'Pickleball & Mini Tennis Court Reservations')
-        pickle_res_button.click()
 
-    def choose_date_time(self, date, optimal_time):
+        hover_res_element = self.driver.find_element(By.XPATH, "//div//span[text()='Reservations']")
+        pickle_res_button = hover_res_element.find_element(By.XPATH, "//div//span[text()='Pickleball & Mini Tennis Court Reservations']")
+        self.driver.execute_script("arguments[0].dispatchEvent(new Event('mouseover')); arguments[1].click();", hover_res_element, pickle_res_button)
+
+    def choose_date_time(self, today, target_date, target_time):
         """
         Find today's date and click to open calendar.
         Locate date (8 days from today) and click.
         Locate desired time option and click.
         """
-
+        calendar_button = self.driver.find_element(By.XPATH, f"//div//span[text()='{today}']")
+        calendar_button.click()
+        date_button = self.driver.find_element(By.XPATH, f"//a[contains(@title, '{target_date})']")
+        date_button.click()
+        time_button = self.driver.find_element(By.XPATH, f"//a[contains(@data-href, '{target_time}')]")
+        time_button.click()
 

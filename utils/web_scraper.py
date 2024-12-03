@@ -1,24 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from random_delay import random_wait
 
 """
 Use Selenium to automate browser interactions.
 
 Use WebScraper class functions in order to navigate the target website and
 book a court reservation.
-* __init__: Instantiate Selenium ChromeDriver and open the web browser.
-* navigator: Navigate to the web page for scheduling tennis/pickleball.
-* login_to_reserve: Locate the "Log In" element of the webpage and click.
-    Enter email and password.
-    Click the login button.
-    Locate and click "Pickleball and mini tennis reservations" from
-        "Reservations" drop-down menu.
-*choose_date_time: Find today's date and click to open calendar.
-    Locate date (8 days from today) and click.
-    Locate desired time option and click.
-*finish_booking: Change duration to "1 hour & 30 minutes" from drop-down.
-    Click "Check to agree to above disclosure" box.
-    Click "Save" to finish booking.
+
+random_waits is imported to create random delays to simulate human behavior.
+At 0.5-1.1 and current settings: max total time is 15.7s, min time is 7.5s.
 
 """
 
@@ -54,17 +47,22 @@ class WebScraper:
         "Reservations" drop-down menu.
         Use execute_script to hover and then click into pickleball reservations.
         """
+        random_wait()
         login_button = self.driver.find_element(By.LINK_TEXT, "LOG IN")
         login_button.click()
+        random_wait()
         enter_email = self.driver.find_element(By.ID, "UserNameOrEmail")
         enter_password = self.driver.find_element(By.ID, "Password")
         login_button = self.driver.find_element(By.XPATH, "//button[text()='Login']")
         enter_email.send_keys(email)
         enter_password.send_keys(password)
+        random_wait()
         login_button.click()
 
+        random_wait()
         hover_res_element = self.driver.find_element(By.XPATH, "//div//span[text()='Reservations']")
         pickle_res_button = hover_res_element.find_element(By.XPATH, "//div//span[text()='Pickleball & Mini Tennis Court Reservations']")
+        random_wait()
         self.driver.execute_script("arguments[0].dispatchEvent(new Event('mouseover')); arguments[1].click();", hover_res_element, pickle_res_button)
 
     def choose_date_time(self, today, target_date, target_time):
@@ -73,10 +71,13 @@ class WebScraper:
         Locate date (8 days from today) and click.
         Locate desired time option and click.
         """
+        random_wait()
         calendar_button = self.driver.find_element(By.XPATH, f"//div//span[text()='{today}']")
         calendar_button.click()
+        random_wait(min_wait=1, max_wait=2)
         date_button = self.driver.find_element(By.XPATH, f"//a[contains(@title, '{target_date}')]")
         date_button.click()
+        random_wait(min_wait=1, max_wait=2)
         time_button = self.driver.find_element(By.XPATH, f"//a[contains(@data-href, '{target_time}')]")
         time_button.click()
 
@@ -86,11 +87,17 @@ class WebScraper:
         Click "Check to agree to above disclosure" box.
         Click "Save" to finish booking.
         """
-        duration_button = self.driver.find_element(By.XPATH, "//div//span[contains(text(), '1 hour')]")
+        random_wait(min_wait=1, max_wait=2)
+        duration_button = WebDriverWait(self.driver, 5).until(
+            EC.element_to_be_clickable((By.XPATH, "//div//span[contains(text(), '1 hour')]"))
+        )
+        # duration_button = self.driver.find_element(By.XPATH, "//div//span[contains(text(), '1 hour')]")
         duration_button.click()
+        random_wait(min_wait=1, max_wait=2)
         newtime_button = self.driver.find_element(By.XPATH, "//li//span[contains(text(), '30 minutes')]")
         self.driver.execute_script("arguments[0].click();", newtime_button)
         checktoagree_button = self.driver.find_element(By.XPATH, "//div//span//label[contains(text(), 'Check to agree to above disclosure')]")
         checktoagree_button.click()
+        random_wait()
         save_button = self.driver.find_element(By.XPATH, "//div//button[contains(text(), 'Save')]")
         save_button.click()

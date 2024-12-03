@@ -75,8 +75,22 @@ class WebScraper:
         """
         calendar_button = self.driver.find_element(By.XPATH, f"//div//span[text()='{today}']")
         calendar_button.click()
-        date_button = self.driver.find_element(By.XPATH, f"//a[contains(@title, '{target_date})']")
+        date_button = self.driver.find_element(By.XPATH, f"//a[contains(@title, '{target_date}')]")
         date_button.click()
         time_button = self.driver.find_element(By.XPATH, f"//a[contains(@data-href, '{target_time}')]")
         time_button.click()
 
+    def finish_booking(self):
+        """
+        Change duration to "1 hour & 30 minutes" from drop-down.
+        Click "Check to agree to above disclosure" box.
+        Click "Save" to finish booking.
+        """
+        duration_button = self.driver.find_element(By.XPATH, "//div//span[contains(text(), '1 hour')]")
+        duration_button.click()
+        newtime_button = self.driver.find_element(By.XPATH, "//li//span[contains(text(), '30 minutes')]")
+        self.driver.execute_script("arguments[0].click();", newtime_button)
+        checktoagree_button = self.driver.find_element(By.XPATH, "//div//span//label[contains(text(), 'Check to agree to above disclosure')]")
+        checktoagree_button.click()
+        save_button = self.driver.find_element(By.XPATH, "//div//button[contains(text(), 'Save')]")
+        save_button.click()

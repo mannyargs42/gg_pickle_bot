@@ -19,9 +19,11 @@ def format_date(num_days_ahead):
     Expected output for days_from_today should be the same format.
     """
     date_today = datetime.now()
-    formatted_date_today = date_today.strftime("%A, %B %d, %Y")
+    day_today = date_today.day
+    formatted_date_today = date_today.strftime(f"%A, %B {day_today}, %Y")
     future_date = date_today + timedelta(days=num_days_ahead)
-    formatted_future_date = future_date.strftime("%A, %B, %d, %Y")
+    future_day = future_date.day
+    formatted_future_date = future_date.strftime(f"%A, %B {future_day}, %Y")
     return formatted_date_today, formatted_future_date
 
 def format_time(target_time, time_format="%I:%M %p"):
@@ -42,6 +44,3 @@ def format_time(target_time, time_format="%I:%M %p"):
     halfformat_time = zeroless_target.replace(" ", "%20")
     formatted_time = "%20" + halfformat_time + "&end"
     return formatted_time
-
-today, tomorrow = format_date(1)
-time = format_time("5:30 PM")

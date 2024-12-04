@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from random_delay import random_wait
+from utils.random_delay import random_wait
 
 """
 Use Selenium to automate browser interactions.
@@ -72,7 +72,7 @@ class WebScraper:
         Locate desired time option and click.
         """
         random_wait()
-        calendar_button = self.driver.find_element(By.XPATH, f"//div//span[text()='{today}']")
+        calendar_button = self.driver.find_element(By.XPATH, f"//div//span[contains(text(), '{today}')]")
         calendar_button.click()
         random_wait(min_wait=1, max_wait=2)
         date_button = self.driver.find_element(By.XPATH, f"//a[contains(@title, '{target_date}')]")
@@ -91,10 +91,9 @@ class WebScraper:
         duration_button = WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, "//div//span[contains(text(), '1 hour')]"))
         )
-        # duration_button = self.driver.find_element(By.XPATH, "//div//span[contains(text(), '1 hour')]")
         duration_button.click()
         random_wait(min_wait=1, max_wait=2)
-        newtime_button = self.driver.find_element(By.XPATH, "//li//span[contains(text(), '30 minutes')]")
+        newtime_button = self.driver.find_element(By.XPATH, "//li//span[contains(text(), '1 hour & 30 minutes')]")
         self.driver.execute_script("arguments[0].click();", newtime_button)
         checktoagree_button = self.driver.find_element(By.XPATH, "//div//span//label[contains(text(), 'Check to agree to above disclosure')]")
         checktoagree_button.click()

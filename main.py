@@ -1,5 +1,6 @@
 from utils.web_scraper import WebScraper
 from utils.datetime_calculator import format_date, format_time
+from utils.delay import schedule_delay
 
 def main():
     """
@@ -15,15 +16,17 @@ def main():
     url = ""
     email = ""
     password = ""
+    slots_open_at = "X:XX XM"
     days_ahead = 
-    desired_time = ""
+    desired_time = "X:XX XM"
 
     today, target_date = format_date(days_ahead)
     target_time = format_time(desired_time)
     scraper = WebScraper()
     scraper.navigator(url)
     scraper.login_to_reserve(email, password)
-    scraper.choose_date_time(today, target_date, target_time)
+    scraper.go_to_calendar(slots_open_at)
+    scraper.choose_date_time(today, slots_open_at, target_date, target_time)
     scraper.finish_booking()
 
 

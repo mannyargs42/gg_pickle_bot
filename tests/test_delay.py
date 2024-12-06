@@ -1,5 +1,5 @@
 import pytest
-from utils.random_delay import random_wait
+from utils.delay import random_wait
 from unittest.mock import patch
 
 def test_random_wait(monkeypatch):

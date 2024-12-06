@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 37, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 28, in main
+    schedule.every().day.at("12:12").do(scraper.choose_date_time(today, target_date, target_time))
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/schedule/__init__.py", line 655, in do
+    self.job_func = functools.partial(job_func, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: the first argument must be callable
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 37, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 28, in main
+    schedule.every().day.at("12:15").do(scraper.choose_date_time(today, target_date, target_time))
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/schedule/__init__.py", line 655, in do
+    self.job_func = functools.partial(job_func, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: the first argument must be callable
+logged in
+got date time
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 37, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 28, in main
+    schedule.every().day.at("12:19").do(scraper.choose_date_time(today, target_date, target_time))
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/schedule/__init__.py", line 655, in do
+    self.job_func = functools.partial(job_func, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: the first argument must be callable
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 34, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 29, in main
+    scraper.choose_date_time(today, target_date, target_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 81, in choose_date_time
+    time_button = self.driver.find_element(By.XPATH, f"//a[contains(@data-href, '{target_time}')]")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 770, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@data-href, '%208:00%20PM&end')]"}
+  (Session info: chrome=131.0.6778.109); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001053ffb08 cxxbridge1$str$ptr + 3651580
+1   chromedriver                        0x00000001053f8358 cxxbridge1$str$ptr + 3620940
+2   chromedriver                        0x0000000104e604b4 cxxbridge1$string$len + 89224
+3   chromedriver                        0x0000000104ea4898 cxxbridge1$string$len + 368748
+4   chromedriver                        0x0000000104ede0fc cxxbridge1$string$len + 604368
+5   chromedriver                        0x0000000104e990b0 cxxbridge1$string$len + 321668
+6   chromedriver                        0x0000000104e99d00 cxxbridge1$string$len + 324820
+7   chromedriver                        0x00000001053cae4c cxxbridge1$str$ptr + 3435328
+8   chromedriver                        0x00000001053ce164 cxxbridge1$str$ptr + 3448408
+9   chromedriver                        0x00000001053b21c0 cxxbridge1$str$ptr + 3333812
+10  chromedriver                        0x00000001053cea24 cxxbridge1$str$ptr + 3450648
+11  chromedriver                        0x00000001053a39cc cxxbridge1$str$ptr + 3274432
+12  chromedriver                        0x00000001053e9138 cxxbridge1$str$ptr + 3558956
+13  chromedriver                        0x00000001053e92b4 cxxbridge1$str$ptr + 3559336
+14  chromedriver                        0x00000001053f7fcc cxxbridge1$str$ptr + 3620032
+15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 34, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 29, in main
+    scraper.choose_date_time(today, slots_open_at, target_date, target_time)
+TypeError: WebScraper.choose_date_time() takes 4 positional arguments but 5 were given

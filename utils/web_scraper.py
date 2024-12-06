@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utils.random_delay import random_wait
+from utils.delay import random_wait, schedule_delay
 
 """
 Use Selenium to automate browser interactions.
@@ -59,7 +59,8 @@ class WebScraper:
         random_wait()
         login_button.click()
 
-        random_wait()
+    def go_to_calendar(self, slot_time):
+        schedule_delay(slot_time)
         hover_res_element = self.driver.find_element(By.XPATH, "//div//span[text()='Reservations']")
         pickle_res_button = hover_res_element.find_element(By.XPATH, "//div//span[text()='Pickleball & Mini Tennis Court Reservations']")
         random_wait()
@@ -87,8 +88,8 @@ class WebScraper:
         Click "Check to agree to above disclosure" box.
         Click "Save" to finish booking.
         """
-        random_wait(min_wait=1, max_wait=2)
-        duration_button = WebDriverWait(self.driver, 5).until(
+        random_wait()
+        duration_button = WebDriverWait(self.driver, 15).until(
             EC.element_to_be_clickable((By.XPATH, "//div//span[contains(text(), '1 hour')]"))
         )
         duration_button.click()
@@ -99,4 +100,5 @@ class WebScraper:
         checktoagree_button.click()
         random_wait()
         save_button = self.driver.find_element(By.XPATH, "//div//button[contains(text(), 'Save')]")
-        save_button.click()
+        print("made it all the way")
+        # save_button.click()

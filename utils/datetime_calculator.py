@@ -37,7 +37,7 @@ def format_time(target_time, time_format="%I:%M %p"):
         Expected output for time in format: "%207:30%20AM&end"
     """
     datetime_obj = datetime.strptime(target_time, time_format)
-    random_timeaddn = random.choice([0, 0.5, 1])
+    random_timeaddn = random.choice([0.5])
     new_target = datetime_obj + timedelta(hours=random_timeaddn)
     new_target_str = new_target.strftime(time_format)
     zeroless_target = new_target_str.lstrip("0")

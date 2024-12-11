@@ -98,7 +98,7 @@ class WebScraper:
                 self.target_time = self.target_time.replace("&end", "")
                 self.target_time = self.target_time.replace("%20", " ")
                 self.target_time = self.target_time.lstrip()
-                self.target_time = format_time(self.target_time)
+                self.target_time = format_time(self.target_time, time_changes=[0.5])
                 max_tries -= 1
             else:
                 break
@@ -111,7 +111,7 @@ class WebScraper:
         Click "Save" to finish booking.
         """
         max_tries = 5
-        wait_time = 1
+        wait_time = 3
         while max_tries > 0:
             try:
                 duration_button = WebDriverWait(self.driver, wait_time).until(
@@ -133,5 +133,5 @@ class WebScraper:
         checktoagree_button.click()
         random_wait()
         save_button = self.driver.find_element(By.XPATH, "//div//button[contains(text(), 'Save')]")
+        save_button.click()
         print("made it all the way")
-        # save_button.click()

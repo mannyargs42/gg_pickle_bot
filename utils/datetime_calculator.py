@@ -26,7 +26,7 @@ def format_date(num_days_ahead):
     formatted_future_date = future_date.strftime(f"%A, %B {future_day}, %Y")
     return formatted_date_today, formatted_future_date
 
-def format_time(target_time, time_format="%I:%M %p"):
+def format_time(target_time, time_format="%I:%M %p", time_changes=[0, 0.5, 1]):
     """
     Converts a target time to a time option +0, 0.5 or 1 hour, in format to
     match find_element on website.
@@ -37,7 +37,7 @@ def format_time(target_time, time_format="%I:%M %p"):
         Expected output for time in format: "%207:30%20AM&end"
     """
     datetime_obj = datetime.strptime(target_time, time_format)
-    random_timeaddn = random.choice([0.5])
+    random_timeaddn = random.choice(time_changes)
     new_target = datetime_obj + timedelta(hours=random_timeaddn)
     new_target_str = new_target.strftime(time_format)
     zeroless_target = new_target_str.lstrip("0")

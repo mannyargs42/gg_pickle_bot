@@ -155,3 +155,283 @@ NoSuchElementException 10, %206:00%20PM&end
 NoSuchElementException 9, %206:30%20PM&end
 TimeoutException 5
 made it all the way
+TimeoutException 5
+made it all the way
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 38, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 29, in main
+    scraper.go_to_calendar(slots_open_at)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 71, in go_to_calendar
+    schedule_delay(slot_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/delay.py", line 25, in schedule_delay
+    time.sleep(wait_time_s)
+ValueError: sleep length must be non-negative
+2024-12-12 14:47:01.912892
+2024-12-12 14:47:04.633366
+made it all the way
+2024-12-12 14:47:08.905220
+2024-12-12 14:59:02.631388
+2024-12-12 14:59:03.745565
+made it all the way
+2024-12-12 14:59:07.545563
+preschedule_delay 2024-12-12 15:05:29.523730
+preclick 2024-12-12 15:06:00.046222
+postclick 2024-12-12 15:06:01.113849
+2024-12-12 15:06:01.113882
+2024-12-12 15:06:02.819547
+made it all the way
+2024-12-12 15:06:06.136695
+preschedule_delay 2024-12-12 15:09:19.821797
+preclick 2024-12-12 15:10:00.068035
+postclick 2024-12-12 15:10:01.272257
+2024-12-12 15:10:01.272293
+2024-12-12 15:10:02.304836
+made it all the way
+2024-12-12 15:10:05.816544
+preschedule_delay 2024-12-12 15:19:16.868815
+preclick 2024-12-12 15:19:59.996681
+postclick 2024-12-12 15:20:02.077871
+2024-12-12 15:20:02.078000
+2024-12-12 15:20:04.266466
+made it all the way
+2024-12-12 15:20:07.731553
+preschedule_delay 2024-12-12 16:32:17.726861
+preclick 2024-12-12 16:34:00.001134
+postclick 2024-12-12 16:34:01.855751
+2024-12-12 16:34:01.855853
+2024-12-12 16:34:04.059543
+made it all the way
+2024-12-12 16:34:07.397104
+preschedule_delay 2024-12-12 18:27:16.334204
+preclick 2024-12-12 18:28:00.025577
+postclick 2024-12-12 18:28:01.118968
+2024-12-12 18:28:01.119037
+2024-12-12 18:28:02.804805
+made it all the way
+2024-12-12 18:28:06.740140
+preschedule_delay 2024-12-12 18:37:14.958601
+preclick 2024-12-12 18:38:00.035692
+postclick 2024-12-12 18:38:01.175670
+2024-12-12 18:38:01.175720
+2024-12-12 18:38:02.958297
+made it all the way
+2024-12-12 18:38:06.331595
+preschedule_delay 2024-12-12 18:51:17.574491
+preclick 2024-12-12 18:52:00.034080
+postclick 2024-12-12 18:52:01.400283
+2024-12-12 18:52:01.400928
+2024-12-12 18:52:03.359983
+made it all the way
+2024-12-12 18:52:06.934900
+preschedule_delay 2024-12-12 18:54:16.010685
+preclick 2024-12-12 18:55:00.060080
+postclick 2024-12-12 18:55:01.392820
+2024-12-12 18:55:01.392865
+2024-12-12 18:55:03.529733
+made it all the way
+2024-12-12 18:55:06.956777
+preschedule_delay 2024-12-12 18:58:15.856333
+preclick 2024-12-12 18:59:00.023069
+postclick 2024-12-12 18:59:01.379226
+2024-12-12 18:59:01.379272
+2024-12-12 18:59:04.843956
+TimeoutException 5
+Timeout:  2024-12-12 18:59:08.123566
+made it all the way
+2024-12-12 18:59:13.426898
+preschedule_delay 2024-12-12 19:02:15.994273
+preclick 2024-12-12 19:03:00.068190
+postclick 2024-12-12 19:03:01.254599
+2024-12-12 19:03:01.254706
+2024-12-12 19:03:03.356437
+made it all the way
+2024-12-12 19:03:06.619928
+preschedule_delay 2024-12-12 19:05:15.952182
+preclick 2024-12-12 19:06:00.018081
+postclick 2024-12-12 19:06:01.204366
+2024-12-12 19:06:01.204414
+2024-12-12 19:06:03.333523
+made it all the way
+2024-12-12 19:06:06.320605
+preschedule_delay 2024-12-13 12:28:16.427883
+preclick 2024-12-13 12:30:00.062073
+postclick 2024-12-13 12:30:01.521047
+2024-12-13 12:30:01.521158
+2024-12-13 12:30:03.637609
+made it all the way
+2024-12-13 12:30:06.781141
+preschedule_delay 2025-01-03 12:28:21.277546
+preclick 2025-01-03 12:30:00.106054
+postclick 2025-01-03 12:30:01.912256
+2025-01-03 12:30:01.912317
+2025-01-03 12:30:03.623421
+made it all the way
+2025-01-03 12:30:07.413863
+preschedule_delay 2025-01-07 12:28:18.208507
+preclick 2025-01-07 12:29:59.989798
+postclick 2025-01-07 12:30:02.195638
+2025-01-07 12:30:02.195811
+2025-01-07 12:30:04.419049
+TimeoutException 5
+Timeout:  2025-01-07 12:30:07.965603
+made it all the way
+2025-01-07 12:30:13.735735
+preschedule_delay 2025-01-08 12:28:17.148771
+preclick 2025-01-08 12:46:14.425229
+postclick 2025-01-08 12:46:17.430286
+2025-01-08 12:46:17.430332
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 38, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 31, in main
+    scraper.choose_date_time(today, target_date, target_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 96, in choose_date_time
+    time_button = WebDriverWait(self.driver, 3).until(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000101366138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x000000010135e988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000100dc4968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x0000000100e08d4c cxxbridge1$string$len + 368752
+4   chromedriver                        0x0000000100e424f0 cxxbridge1$string$len + 604180
+5   chromedriver                        0x0000000100dfd564 cxxbridge1$string$len + 321672
+6   chromedriver                        0x0000000100dfe1b4 cxxbridge1$string$len + 324824
+7   chromedriver                        0x0000000101330fc0 cxxbridge1$str$ptr + 3436424
+8   chromedriver                        0x00000001013342dc cxxbridge1$str$ptr + 3449508
+9   chromedriver                        0x0000000101317e60 cxxbridge1$str$ptr + 3333672
+10  chromedriver                        0x0000000101334b9c cxxbridge1$str$ptr + 3451748
+11  chromedriver                        0x0000000101309678 cxxbridge1$str$ptr + 3274304
+12  chromedriver                        0x000000010134f2b4 cxxbridge1$str$ptr + 3560060
+13  chromedriver                        0x000000010134f430 cxxbridge1$str$ptr + 3560440
+14  chromedriver                        0x000000010135e5fc cxxbridge1$str$ptr + 3622340
+15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+
+preschedule_delay 2025-01-09 12:28:16.973176
+preclick 2025-01-09 12:30:00.051712
+postclick 2025-01-09 12:30:02.555561
+2025-01-09 12:30:02.555721
+2025-01-09 12:30:04.228613
+TimeoutException 5
+Timeout:  2025-01-09 12:30:07.624426
+TimeoutException 4
+Timeout:  2025-01-09 12:30:19.591841
+TimeoutException 3
+Timeout:  2025-01-09 12:30:30.192250
+made it all the way
+2025-01-09 12:30:38.886660
+preschedule_delay 2025-01-10 12:28:27.712168
+preclick 2025-01-10 12:30:00.075118
+postclick 2025-01-10 12:30:01.870064
+2025-01-10 12:30:01.870228
+2025-01-10 12:30:04.293577
+made it all the way
+2025-01-10 12:30:08.209269
+preschedule_delay 2025-01-11 12:28:14.852835
+preclick 2025-01-11 12:30:04.755009
+postclick 2025-01-11 12:30:08.296336
+2025-01-11 12:30:08.296390
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 38, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 31, in main
+    scraper.choose_date_time(today, target_date, target_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 96, in choose_date_time
+    time_button = WebDriverWait(self.driver, 4).until(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000103376138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x000000010336e988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000102dd4968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x0000000102e18d4c cxxbridge1$string$len + 368752
+4   chromedriver                        0x0000000102e524f0 cxxbridge1$string$len + 604180
+5   chromedriver                        0x0000000102e0d564 cxxbridge1$string$len + 321672
+6   chromedriver                        0x0000000102e0e1b4 cxxbridge1$string$len + 324824
+7   chromedriver                        0x0000000103340fc0 cxxbridge1$str$ptr + 3436424
+8   chromedriver                        0x00000001033442dc cxxbridge1$str$ptr + 3449508
+9   chromedriver                        0x0000000103327e60 cxxbridge1$str$ptr + 3333672
+10  chromedriver                        0x0000000103344b9c cxxbridge1$str$ptr + 3451748
+11  chromedriver                        0x0000000103319678 cxxbridge1$str$ptr + 3274304
+12  chromedriver                        0x000000010335f2b4 cxxbridge1$str$ptr + 3560060
+13  chromedriver                        0x000000010335f430 cxxbridge1$str$ptr + 3560440
+14  chromedriver                        0x000000010336e5fc cxxbridge1$str$ptr + 3622340
+15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+
+preschedule_delay 2025-01-13 12:28:16.696067
+preclick 2025-01-13 12:29:59.982966
+postclick 2025-01-13 12:30:03.378055
+2025-01-13 12:30:03.378319
+2025-01-13 12:30:04.888857
+TimeoutException 5
+Timeout:  2025-01-13 12:30:10.204799
+TimeoutException 4
+Timeout:  2025-01-13 12:30:21.000204
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 122, in finish_booking
+    duration_button = WebDriverWait(self.driver, wait_time).until(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000102f4a138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x0000000102f42988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x00000001029a8968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x00000001029ecd4c cxxbridge1$string$len + 368752
+4   chromedriver                        0x0000000102a264f0 cxxbridge1$string$len + 604180
+5   chromedriver                        0x00000001029e1564 cxxbridge1$string$len + 321672
+6   chromedriver                        0x00000001029e21b4 cxxbridge1$string$len + 324824
+7   chromedriver                        0x0000000102f14fc0 cxxbridge1$str$ptr + 3436424
+8   chromedriver                        0x0000000102f182dc cxxbridge1$str$ptr + 3449508
+9   chromedriver                        0x0000000102efbe60 cxxbridge1$str$ptr + 3333672
+10  chromedriver                        0x0000000102f18b9c cxxbridge1$str$ptr + 3451748
+11  chromedriver                        0x0000000102eed678 cxxbridge1$str$ptr + 3274304
+12  chromedriver                        0x0000000102f332b4 cxxbridge1$str$ptr + 3560060
+13  chromedriver                        0x0000000102f33430 cxxbridge1$str$ptr + 3560440
+14  chromedriver                        0x0000000102f425fc cxxbridge1$str$ptr + 3622340
+15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 38, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 33, in main
+    scraper.finish_booking()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 129, in finish_booking
+    self.choose_date_time(self.target_date, self.target_date, self.target_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 96, in choose_date_time
+    time_button = WebDriverWait(self.driver, 4).until(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000102f4a138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x0000000102f42988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x00000001029a8968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x00000001029ecd4c cxxbridge1$string$len + 368752
+4   chromedriver                        0x0000000102a264f0 cxxbridge1$string$len + 604180
+5   chromedriver                        0x00000001029e1564 cxxbridge1$string$len + 321672
+6   chromedriver                        0x00000001029e21b4 cxxbridge1$string$len + 324824
+7   chromedriver                        0x0000000102f14fc0 cxxbridge1$str$ptr + 3436424
+8   chromedriver                        0x0000000102f182dc cxxbridge1$str$ptr + 3449508
+9   chromedriver                        0x0000000102efbe60 cxxbridge1$str$ptr + 3333672
+10  chromedriver                        0x0000000102f18b9c cxxbridge1$str$ptr + 3451748
+11  chromedriver                        0x0000000102eed678 cxxbridge1$str$ptr + 3274304
+12  chromedriver                        0x0000000102f332b4 cxxbridge1$str$ptr + 3560060
+13  chromedriver                        0x0000000102f33430 cxxbridge1$str$ptr + 3560440
+14  chromedriver                        0x0000000102f425fc cxxbridge1$str$ptr + 3622340
+15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+

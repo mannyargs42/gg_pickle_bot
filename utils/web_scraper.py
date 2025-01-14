@@ -6,6 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from utils.delay import random_wait, schedule_delay
 from utils.datetime_calculator import format_time
+from datetime import datetime
 
 """
 Use Selenium to automate browser interactions.
@@ -62,16 +63,19 @@ class WebScraper:
         enter_password = self.driver.find_element(By.ID, "Password")
         login_button = self.driver.find_element(By.XPATH, "//button[text()='Login']")
         enter_email.send_keys(email)
+        random_wait()
         enter_password.send_keys(password)
         random_wait()
         login_button.click()
 
     def go_to_calendar(self, slot_time):
-        schedule_delay(slot_time)
         hover_res_element = self.driver.find_element(By.XPATH, "//div//span[text()='Reservations']")
         pickle_res_button = hover_res_element.find_element(By.XPATH, "//div//span[text()='Pickleball & Mini Tennis Court Reservations']")
-        random_wait()
+        print("preschedule_delay", datetime.now())
+        schedule_delay(slot_time)
+        print("preclick", datetime.now())
         self.driver.execute_script("arguments[0].dispatchEvent(new Event('mouseover')); arguments[1].click();", hover_res_element, pickle_res_button)
+        print("postclick", datetime.now())
 
     def choose_date_time(self, today, target_date, target_time):
         """
@@ -82,17 +86,17 @@ class WebScraper:
         self.today = today
         self.target_date = target_date
         self.target_time = target_time
-        random_wait()
         calendar_button = self.driver.find_element(By.XPATH, f"//div//span[contains(text(), '{self.today}')]")
         calendar_button.click()
-        random_wait()
         date_button = self.driver.find_element(By.XPATH, f"//a[contains(@title, '{self.target_date}')]")
-        date_button.click()
-        random_wait(min_wait=1, max_wait=2)
-        max_tries = 10
+        self.driver.execute_script("arguments[0].click();", date_button)
+        max_tries = 5
+        wait_time = 3
         while max_tries > 0:
             try:
-                time_button = self.driver.find_element(By.XPATH, f"//a[contains(@data-href, '{self.target_time}')]")
+                time_button = WebDriverWait(self.driver, wait_time).until(
+                    EC.element_to_be_clickable((By.XPATH, f"//a[contains(@data-href, '{self.target_time}')]"))
+                )
             except NoSuchElementException:
                 print(f"NoSuchElementException {max_tries}, {self.target_time}")
                 self.target_time = self.target_time.replace("&end", "")
@@ -100,8 +104,14 @@ class WebScraper:
                 self.target_time = self.target_time.lstrip()
                 self.target_time = format_time(self.target_time, time_changes=[0.5])
                 max_tries -= 1
+            except TimeoutException:
+                print(f"TimeoutException choose_date_time {max_tries}")
+                print("Timeout: ", datetime.now())
+                wait_time += 3
+                max_tries -= 1
             else:
                 break
+        # self.driver.execute_script("arguments[0].click();", time_button)
         time_button.click()
 
     def finish_booking(self):
@@ -112,26 +122,26 @@ class WebScraper:
         """
         max_tries = 5
         wait_time = 3
+        random_wait()
         while max_tries > 0:
             try:
                 duration_button = WebDriverWait(self.driver, wait_time).until(
                     EC.element_to_be_clickable((By.XPATH, "//div//span[contains(text(), '1 hour')]"))
                 )
             except TimeoutException:
-                print(f"TimeoutException {max_tries}")
+                print(f"TimeoutException finish_booking {max_tries}")
+                print("Timeout: ", datetime.now())
                 self.driver.refresh()
                 self.choose_date_time(self.target_date, self.target_date, self.target_time)
-                wait_time += 2
+                wait_time += 3
                 max_tries -= 1
             else:
                 break
         duration_button.click()
-        random_wait(min_wait=1, max_wait=2)
         newtime_button = self.driver.find_element(By.XPATH, "//li//span[contains(text(), '1 hour & 30 minutes')]")
         self.driver.execute_script("arguments[0].click();", newtime_button)
         checktoagree_button = self.driver.find_element(By.XPATH, "//div//span//label[contains(text(), 'Check to agree to above disclosure')]")
         checktoagree_button.click()
-        random_wait()
         save_button = self.driver.find_element(By.XPATH, "//div//button[contains(text(), 'Save')]")
         save_button.click()
         print("made it all the way")

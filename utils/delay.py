@@ -21,6 +21,6 @@ def schedule_delay(start_time, time_format="%I:%M %p"):
     target_time = datetime.strptime(start_time, time_format).time()
     target_datetime = datetime.combine(now_datetime.date(), target_time)
     wait_time = target_datetime - now_datetime
-    wait_time_s = wait_time.total_seconds()
+    wait_time_s = wait_time.total_seconds() - 0.04
     time.sleep(wait_time_s)
     

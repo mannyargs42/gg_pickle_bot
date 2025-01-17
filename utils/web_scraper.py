@@ -145,3 +145,14 @@ class WebScraper:
         save_button = self.driver.find_element(By.XPATH, "//div//button[contains(text(), 'Save')]")
         save_button.click()
         print("made it all the way")
+
+    def check_status(self):
+        random_wait(min_wait=10, max_wait=30)
+        # try:
+        reservation_notice = self.driver.find_element(By.XPATH, "//div[contains(text(), 'Sorry, no available courts for the time requested.')]")
+        reservation_notice.click()
+        """except NoSuchElementException:
+            print("Sorry, no available courts for the time requested.")
+            new_time = format_time(self.target_time, time_changes=[1])
+            self.driver.refresh()
+            self.choose_date_time(self.target_date, self.target_date, new_time)"""

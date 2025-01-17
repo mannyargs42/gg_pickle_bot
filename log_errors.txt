@@ -435,3 +435,118 @@ Stacktrace:
 15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
 16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
 
+preschedule_delay 2025-01-14 12:28:27.305887
+preclick 2025-01-14 12:29:59.927012
+postclick 2025-01-14 12:30:01.820575
+2025-01-14 12:30:01.820815
+TimeoutException choose_date_time 5
+Timeout:  2025-01-14 12:30:05.664916
+TimeoutException choose_date_time 4
+Timeout:  2025-01-14 12:30:11.960117
+TimeoutException choose_date_time 3
+Timeout:  2025-01-14 12:30:21.069913
+TimeoutException choose_date_time 2
+Timeout:  2025-01-14 12:30:33.560953
+TimeoutException choose_date_time 1
+Timeout:  2025-01-14 12:30:48.917974
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 38, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 31, in main
+    scraper.choose_date_time(today, target_date, target_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 115, in choose_date_time
+    time_button.click()
+    ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'time_button' where it is not associated with a value
+preschedule_delay 2025-01-15 12:28:17.050733
+preclick 2025-01-15 12:29:59.979944
+postclick 2025-01-15 12:30:01.609500
+2025-01-15 12:30:01.609531
+2025-01-15 12:30:03.295213
+made it all the way
+2025-01-15 12:30:06.597656
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 39, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 35, in main
+    scraper.check_status()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 152, in check_status
+    reservation_notice = self.driver.find_element(By.XPATH, "//div//div[contains(text(), 'Sorry, no available')]")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 770, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div//div[contains(text(), 'Sorry, no available')]"}
+  (Session info: chrome=131.0.6778.265); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010081a138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x0000000100812988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x0000000100278968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x00000001002bcd4c cxxbridge1$string$len + 368752
+4   chromedriver                        0x00000001002f64f0 cxxbridge1$string$len + 604180
+5   chromedriver                        0x00000001002b1564 cxxbridge1$string$len + 321672
+6   chromedriver                        0x00000001002b21b4 cxxbridge1$string$len + 324824
+7   chromedriver                        0x00000001007e4fc0 cxxbridge1$str$ptr + 3436424
+8   chromedriver                        0x00000001007e82dc cxxbridge1$str$ptr + 3449508
+9   chromedriver                        0x00000001007cbe60 cxxbridge1$str$ptr + 3333672
+10  chromedriver                        0x00000001007e8b9c cxxbridge1$str$ptr + 3451748
+11  chromedriver                        0x00000001007bd678 cxxbridge1$str$ptr + 3274304
+12  chromedriver                        0x00000001008032b4 cxxbridge1$str$ptr + 3560060
+13  chromedriver                        0x0000000100803430 cxxbridge1$str$ptr + 3560440
+14  chromedriver                        0x00000001008125fc cxxbridge1$str$ptr + 3622340
+15  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+
+preschedule_delay 2025-01-16 12:28:18.804009
+preclick 2025-01-16 12:30:00.103650
+postclick 2025-01-16 12:30:01.749332
+2025-01-16 12:30:01.749369
+Traceback (most recent call last):
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 39, in <module>
+    main()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/main.py", line 31, in main
+    scraper.choose_date_time(today, target_date, target_time)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/utils/web_scraper.py", line 115, in choose_date_time
+    time_button.click()
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "/Users/manny/Personal-Projects/Bots/GG_Pickle_Bot/gg_pickle/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.265); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x00000001028be138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x00000001028b6988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x000000010231c968 cxxbridge1$string$len + 89228
+3   chromedriver                        0x000000010232184c cxxbridge1$string$len + 109424
+4   chromedriver                        0x000000010232389c cxxbridge1$string$len + 117696
+5   chromedriver                        0x0000000102323944 cxxbridge1$string$len + 117864
+6   chromedriver                        0x0000000102366528 cxxbridge1$string$len + 391244
+7   chromedriver                        0x0000000102364c30 cxxbridge1$string$len + 384852
+8   chromedriver                        0x0000000102362b74 cxxbridge1$string$len + 376472
+9   chromedriver                        0x0000000102361fac cxxbridge1$string$len + 373456
+10  chromedriver                        0x0000000102357470 cxxbridge1$string$len + 329620
+11  chromedriver                        0x0000000102356ec4 cxxbridge1$string$len + 328168
+12  chromedriver                        0x000000010239a4f0 cxxbridge1$string$len + 604180
+13  chromedriver                        0x0000000102355564 cxxbridge1$string$len + 321672
+14  chromedriver                        0x00000001023561b4 cxxbridge1$string$len + 324824
+15  chromedriver                        0x0000000102888fc0 cxxbridge1$str$ptr + 3436424
+16  chromedriver                        0x000000010288c2dc cxxbridge1$str$ptr + 3449508
+17  chromedriver                        0x000000010286fe60 cxxbridge1$str$ptr + 3333672
+18  chromedriver                        0x000000010288cb9c cxxbridge1$str$ptr + 3451748
+19  chromedriver                        0x0000000102861678 cxxbridge1$str$ptr + 3274304
+20  chromedriver                        0x00000001028a72b4 cxxbridge1$str$ptr + 3560060
+21  chromedriver                        0x00000001028a7430 cxxbridge1$str$ptr + 3560440
+22  chromedriver                        0x00000001028b65fc cxxbridge1$str$ptr + 3622340
+23  libsystem_pthread.dylib             0x0000000191722f94 _pthread_start + 136
+24  libsystem_pthread.dylib             0x000000019171dd34 thread_start + 8
+
